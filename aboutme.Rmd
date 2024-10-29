@@ -1,0 +1,65 @@
+---
+title: "About me "
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Education 
+**Columbia University, Mailman School of Public Health, New York, NY**				   
+_Anticipated May 2025_  
+Master of Public Health in Epidemiology, Concentration in Biostatistics				            
+Relevant Coursework: Research Methods and Application, Analysis of Categorical Data, Determinants of Health
+ 
+**Cornell University, College of Human Ecology, Ithaca, NY**		       		       	       
+_December 2022_  
+Bachelor of Science in Human Development, Minor in Global Health 					         
+Relevant Coursework: Epidemiology, Introductory Statistics for Biology, Explorations in Global and Public Health
+
+# Relevant Experience 
+**Advocates for Human Potential, Inc. (AHP)**			    		       		             	             
+_Remote Intern with Data Analysis Team_	  
+**June 2023 - Present**  
+•	Clean and analyze data for various project teams and DEI using excel and Power BI; create reports of findings
+•	Served as a Grantee Liaison for the Hub and Spoke project team to ensure SOR sites were meeting grant deliverables
+•	Led a Coaching Call on Zoom for over 70 site representatives to discuss the incorporation of family engagement
+
+**Oxfam India**						       						             
+_Remote Research Intern for the Food Hive- Nourish the Cities Program_				             
+**July 2022 - August 2022**  
+•	Researched issues related to health, gender inequality, the informal sector, and education in the slums of Bangalore
+•	Wrote a report on best practices for public health fieldwork in slums using urban poverty research in India and abroad
+•	Presented report to program team to suggest coexisting issues to address that furthered health and nutrition problems 
+
+**Renal Consultants Medical Group**						       		      
+_Granada Hills, CA: Research Assistant_						      			           
+**June 2022 - August 2022**  
+•	Assisted clinical researchers working on a non-interventional study providing insights into the use of finerenone 
+•	Compiled a list of eligible study participants from the clinic’s database using the inclusion and exclusion criteria
+•	Tabulated their related information and made it accessible to the researchers
+
+**Global Alliance for Improved Nutrition (GAIN)**  
+_Remote Research Analysis Intern_  
+**June 2022 - July 2022**  
+•	Organized excerpts from 26 focus group transcripts for a consumer test on a health communication concept	
+•	Analyzed text data with Dedoose, a qualitative coding software, and created tables to organize them into themes
+•	Created a report to verify the research agency’s conclusions and justify the direction of the communication strategy
+
+# Leadership
+**Kessler Presidential Scholarship**  
+_Ithaca, NY: Scholar and Advisory Board Head_  
+**July 2019 – December 2022**  
+•	Selected out of freshman class along with 19 other first-generation scholars for excelling academically in prior education and showing leadership within respective local communities
+•	Headed a committee within the program to provide guidance and resources to the newer cohorts
+
+**Vaccination Conversations with Scientists (VaCS)**  
+_Ithaca, NY: Data Collection Committee Head_  
+**January 2022 - December 2022**  
+•	Analyzed data using R to guide outreach strategies, update funders, motivate volunteers, and inform partners
+•	Led bi-weekly meetings with the data collection committee to plan new analysis projects and improve old ones 
+•	Trained general body members on communication strategies for promoting vaccine safety to reach a variety of people
+
+# Skills and Interests   
+•	**Skills and Certifications**: Excel, R Statistical Software, SAS, Power BI, CITI Training (IRB & RCR), Dedoose
+

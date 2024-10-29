@@ -1,12 +1,11 @@
 ---
-title: "My awesome website"
+title: "Kaylin De Silva's Website"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
-# This is Jeff's awesome website
+# This is Kaylin's website
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+[about](aboutme.html)
