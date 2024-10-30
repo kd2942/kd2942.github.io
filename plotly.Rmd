@@ -1,0 +1,88 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Plotly
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(dplyr)
+
+library(plotly)
+```
+
+```{r}
+data("ny_noaa")
+
+ny_noaa = 
+  ny_noaa |>
+  mutate(
+    year = substr(date, 1, 4),
+         month = substr(date, 6, 7),
+         day = substr(date, 9, 10)) |>
+  select(year, month, day, id, prcp, snow, snwd, tmax, tmin)|>
+  mutate(
+    month = as.numeric(month),
+    tmax = as.numeric(tmax),
+    tmin = as.numeric
+  )|>
+  mutate(
+    month= case_match(month,
+      1 ~ "January",
+      2 ~ "February",
+      3 ~ "March",
+      4 ~ "April",
+      5 ~ "May",
+      6 ~ "June",
+      7 ~ "July",
+      8 ~ "August",
+      9 ~ "September",
+      10 ~ "October",
+      11 ~ "November",
+      12 ~ "December"
+    ))|>
+  drop_na()|>
+  filter(year %in% c(2009, 2008, 2010))
+
+print(ny_noaa)
+```
+
+```{r}
+ny_noaa |>
+  filter(year==2009) |>
+  plot_ly(
+    y = ~tmax, color = ~month, type = "box", colors = "viridis") |>
+    layout(title = "Distribution of Max Temp By Month in 2009", 
+         yaxis = list(title = "Max Temperature (Tenths of Degrees C)"),
+         xaxis = list(title = "Month"))
+```
+
+```{r}
+ny_noaa |>
+  filter(id=="USC00300063")|>
+  mutate(text_label = str_c("Max temp:  ", tmax, " Min temp: ", tmin)) |> 
+  plot_ly(
+    x = ~tmax, y = ~tmin, type = "scatter", mode = "markers",
+    color = ~year, text = ~text_label, alpha = 0.3)|>
+  layout(title = "Min Temp Against Max Temp in 2008-2010 at Weather Station USC00300063", 
+         xaxis = list(title = "Max Temperature (Tenths of Degrees C)"),
+         yaxis = list(title = "Min Temperature (Tenths of Degrees C)"))
+```
+
+```{r}
+ny_noaa |> 
+  filter(year==2010, id=="USC00300023") |>
+  mutate(snowday = ifelse(snow > 1, 1, 0)) |>  
+  group_by(month) |> 
+  summarise(n = sum(snowday)) |> 
+  mutate(month = factor(month, levels = unique(month))) |> 
+  plot_ly(x = ~month, y = ~n, color = ~month, type = "bar", colors = "viridis") |> 
+  layout(title = "Number of Snow Days per Month in 2010 at Weather Station USC00300023", 
+         xaxis = list(title = "Month"),
+         yaxis = list(title = "Number of Snow Days"))
+```
+

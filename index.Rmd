@@ -6,6 +6,14 @@ output:
     toc_float: true
 ---
 
-# This is Kaylin's website
+# Welcome :) 
 
-[about](aboutme.html)
+This website was created for assignment #4 of p8105! I do not have much R experience so it is not very clean or complex, but it was fun to make. I hope you enjoy!
+
+# About Me
+**Here is where you can find out about my education and work experience:**
+[About Me](aboutme.html)
+
+# Plot Dashboard
+**Here is where you can access the plots that I made using the NOAA dataset:**
+[Plots](dashboard_template.html)

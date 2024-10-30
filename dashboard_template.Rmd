@@ -1,0 +1,59 @@
+---
+title: "plots"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ny_noaa |>
+  filter(year==2009) |>
+  plot_ly(
+    y = ~tmax, color = ~month, type = "box", colors = "viridis") |>
+    layout(title = "Distribution of Max Temp By Month in 2009", 
+         yaxis = list(title = "Max Temperature (Tenths of Degrees C)"),
+         xaxis = list(title = "Month"))
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+ny_noaa |>
+  filter(id=="USC00300063")|>
+  mutate(text_label = str_c("Max temp:  ", tmax, " Min temp: ", tmin)) |> 
+  plot_ly(
+    x = ~tmax, y = ~tmin, type = "scatter", mode = "markers",
+    color = ~year, text = ~text_label, alpha = 0.3)|>
+  layout(title = "Min Temp Against Max Temp in 2008-2010 at Weather Station USC00300063", 
+         xaxis = list(title = "Max Temperature (Tenths of Degrees C)"),
+         yaxis = list(title = "Min Temperature (Tenths of Degrees C)"))
+```
+
+### Chart C
+
+```{r}
+ny_noaa |> 
+  filter(year==2010, id=="USC00300023") |>
+  mutate(snowday = ifelse(snow > 1, 1, 0)) |>  
+  group_by(month) |> 
+  summarise(n = sum(snowday)) |> 
+  mutate(month = factor(month, levels = unique(month))) |> 
+  plot_ly(x = ~month, y = ~n, color = ~month, type = "bar", colors = "viridis") |> 
+  layout(title = "Number of Snow Days per Month in 2010 at Weather Station USC00300023", 
+         xaxis = list(title = "Month"),
+         yaxis = list(title = "Number of Snow Days"))
+```
+
